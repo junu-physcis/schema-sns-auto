@@ -1,4 +1,4 @@
-# 성과 (2026-11-27 07:49 KST 수집)
+# 성과 (2026-11-27 07:51 KST 수집)
 
 - threads 계정: followers_count 0, views 320, likes 0, replies 1, reposts 0, quotes 0
 - instagram 계정: followers_count 214, media_count 9
@@ -17,4 +17,6 @@
 | instagram | (직접 게시) | 10/20 14:36 | 윈터 맞이 새 프로필 📷 |  |  |  |  |  |  |  |  |  |  |  |
 
 빈칸 = 그 채널·형식에서 지원 안 하는 항목. shares = 보내기(공유), saved = 저장, follows = 그 게시물로 생긴 팔로우.
-스레드는 답글도 각각 한 줄로 나온다(예약ID 뒤 '(답글)').
+스레드 표는 본글 기준. 수집 오류가 있으면 아래에 적는다.
+- 오류: (#10) Application does not have permission for this action
+
