@@ -318,6 +318,16 @@
       병점고 기말 상담은 영통 이강학원 고등관 031-204-1353으로 주세요.'
     images:
     - media/threads/02.jpg
+- id: th-02-link
+  channel: threads
+  at: 2026-11-28 21:40
+  hold: true
+  slot: 정보
+  reply_to: th-02
+  text: '병점고 포함 네 학교 시험 전체 정리는 여기 있어요.
+
+
+    https://blog.naver.com/physics_edu-16/224494008054'
 - id: th-03
   channel: threads
   at: 2026-11-29 21:30
@@ -357,6 +367,16 @@
       영덕고 기말 대비가 궁금하시면 DM 주세요.'
     images:
     - media/threads/03.jpg
+- id: th-03-link
+  channel: threads
+  at: 2026-11-29 21:40
+  hold: true
+  slot: 정보
+  reply_to: th-03
+  text: '영덕고 포함 네 학교 시험을 학교별로 정리한 글이에요.
+
+
+    https://blog.naver.com/physics_edu-16/224494008054'
 - id: th-04
   channel: threads
   at: 2026-11-30 21:30
@@ -393,6 +413,16 @@
 
 
       태장고 학부모님, 아이가 어떤 문제에서 막혔는지 답글로 알려 주세요.'
+- id: th-04-link
+  channel: threads
+  at: 2026-11-30 21:40
+  hold: true
+  slot: 정보
+  reply_to: th-04
+  text: '태장고를 비롯해 네 학교 시험을 한 번에 정리해 뒀어요.
+
+
+    https://blog.naver.com/physics_edu-16/224494008054'
 - id: th-m01
   channel: threads
   at: 2026-12-01 10:30
@@ -523,6 +553,16 @@
 
 
       청명고 학부모님, 아이가 화학 계산에서 막히는지 답글로 알려 주세요.'
+- id: th-05-link
+  channel: threads
+  at: 2026-12-01 21:40
+  hold: true
+  slot: 정보
+  reply_to: th-05
+  text: '청명고까지, 네 학교 시험 전체 정리는 여기 있어요.
+
+
+    https://blog.naver.com/physics_edu-16/224494008054'
 - id: th-m02
   channel: threads
   at: 2026-12-02 10:30
