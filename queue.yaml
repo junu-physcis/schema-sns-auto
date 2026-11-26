@@ -204,6 +204,16 @@
 
 
     아이 학교 시험은 어디서 점수가 깎였나요?'
+- id: th-m01-link
+  channel: threads
+  at: 2026-12-01 10:40
+  hold: true
+  slot: 정보
+  reply_to: th-m01
+  text: '네 학교가 어디서 점수가 갈렸는지, 학교별로 정리한 글이에요.
+
+
+    https://blog.naver.com/physics_edu-16/224494008054'
 - id: ig-1p-01
   channel: instagram
   at: 2026-12-01 20:00
@@ -303,6 +313,16 @@
 
 
     아이가 그래프 문제에서 유독 자주 틀리나요?'
+- id: th-m02-link
+  channel: threads
+  at: 2026-12-02 10:40
+  hold: true
+  slot: 정보
+  reply_to: th-m02
+  text: '학교별로 어떤 그래프와 자료가 나왔는지는 여기 정리해 두었어요.
+
+
+    https://blog.naver.com/physics_edu-16/224494008054'
 - id: ig-C-physics
   channel: instagram
   at: 2026-12-02 19:30
@@ -410,6 +430,16 @@
 
 
     병점고 학부모님, 아이 기말 준비는 어디까지 왔나요?'
+- id: th-m04-link
+  channel: threads
+  at: 2026-12-04 10:40
+  hold: true
+  slot: 정보
+  reply_to: th-m04
+  text: '병점고 시험이 어디서 갈렸는지 더 자세히 정리한 글이에요.
+
+
+    https://blog.naver.com/physics_edu-16/224494008054'
 - id: ig-04
   channel: instagram
   at: 2026-12-04 19:30
@@ -602,6 +632,16 @@
 
 
     영덕고 학부모님, 아이 필기 노트 한 번 보신 적 있나요?'
+- id: th-m06-link
+  channel: threads
+  at: 2026-12-06 10:40
+  hold: true
+  slot: 정보
+  reply_to: th-m06
+  text: '영덕고 시험에서 프린트와 필기가 어떻게 나왔는지 정리해 두었어요.
+
+
+    https://blog.naver.com/physics_edu-16/224494008054'
 - id: th-10
   channel: threads
   at: 2026-12-06 21:30
@@ -632,6 +672,16 @@
 
 
       아이 학교 시험에서는 어떤 문제가 제일 어려웠다고 하던가요?'
+- id: th-10-link
+  channel: threads
+  at: 2026-12-06 21:40
+  hold: true
+  slot: 정보
+  reply_to: th-10
+  text: '네 학교 시험을 학교별로 하나씩 풀어 둔 글이에요.
+
+
+    https://blog.naver.com/physics_edu-16/224494008054'
 - id: th-m07
   channel: threads
   at: 2026-12-07 10:30
@@ -654,6 +704,16 @@
 
 
     청명고 학부모님, 아이가 화학 계산에서 시간을 많이 쓰나요?'
+- id: th-m07-link
+  channel: threads
+  at: 2026-12-07 10:40
+  hold: true
+  slot: 정보
+  reply_to: th-m07
+  text: '청명고 23문항을 단원과 배점으로 정리한 글이에요.
+
+
+    https://blog.naver.com/physics_edu-16/224494008054'
 - id: ig-07
   channel: instagram
   at: 2026-12-07 19:30
@@ -845,6 +905,16 @@
 
 
     태장고 학부모님, 아이가 어떤 문제에서 시간이 제일 오래 걸리나요?'
+- id: th-m09-link
+  channel: threads
+  at: 2026-12-09 10:40
+  hold: true
+  slot: 정보
+  reply_to: th-m09
+  text: '태장고 시험지에 어떤 자료가 나왔는지 정리해 두었어요.
+
+
+    https://blog.naver.com/physics_edu-16/224494008054'
 - id: ig-09
   channel: instagram
   at: 2026-12-09 19:30

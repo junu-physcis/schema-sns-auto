@@ -248,6 +248,9 @@ def main():
                 it = fill_blog(item)
                 if it.get("reply_to"):  # reply_to: th-01 → th-01 타래의 마지막 글에 붙인다
                     ref = state.get(it["reply_to"], {})
+                    if not ref.get("ids") and not ONLY:
+                        print(f"[WAIT] {iid}: {it['reply_to']} 가 아직 안 올라가서 다음 실행 때 다시 확인")
+                        continue
                     if not ref.get("ids"):
                         raise RuntimeError(f"{it['reply_to']} 가 아직 안 올라가서 답글을 달 수 없음")
                     it["reply_to_id"] = ref["ids"][-1]
