@@ -60,10 +60,12 @@ def th_wait(cid, token):
     raise RuntimeError("Threads 컨테이너 처리 시간 초과")
 
 
-def th_container(token, text, images, reply_to=None):
+def th_container(token, text, images, reply_to=None, topic_tag=None):
     base = {"access_token": token}
     if reply_to:
         base["reply_to_id"] = reply_to
+    if topic_tag:
+        base["topic_tag"] = topic_tag
     if not images:
         return call("POST", f"{TH}/me/threads", media_type="TEXT", text=text, **base)["id"]
     if len(images) == 1:
@@ -95,7 +97,8 @@ def post_threads(item, token, ids):
         text = part.get("text", "")
         if len(text) > 500:
             raise RuntimeError(f"{item['id']} 의 {i}번째 글이 500자를 넘음 ({len(text)}자)")
-        cid = th_container(token, text, part.get("images", []), reply_to=parent)
+        cid = th_container(token, text, part.get("images", []), reply_to=parent,
+                           topic_tag=item.get("topic_tag") if i == 0 else None)
         pid = th_publish(token, cid)
         ids.append(pid)
         parent = pid  # 답글은 바로 앞 글에 이어 단다 (타래)
@@ -118,6 +121,14 @@ def ig_wait(cid, token):
 def post_instagram(item, token):
     images = item.get("images", [])
     caption = item.get("text", "")
+    if item.get("video"):  # 릴스
+        params = {"media_type": "REELS", "video_url": media_url(item["video"]), "caption": caption,
+                  "share_to_feed": "true", "access_token": token}
+        if item.get("cover"):
+            params["cover_url"] = media_url(item["cover"])
+        cid = call("POST", f"{IG}/me/media", **params)["id"]
+        ig_wait(cid, token)
+        return [call("POST", f"{IG}/me/media_publish", creation_id=cid, access_token=token)["id"]]
     if not images:
         raise RuntimeError("인스타 게시물에는 이미지가 1장 이상 필요")
     if len(caption) > 2200:
