@@ -67,7 +67,7 @@
 - id: th-02
   channel: threads
   at: 2026-11-28 21:30
-  hold: true
+  hold: false
   topic_tag: 병점고
   text: '병점고 학부모님, "1학기 쉬웠으니 이번에도 쉽겠지?"
 
@@ -108,7 +108,7 @@
 - id: th-03
   channel: threads
   at: 2026-11-29 21:30
-  hold: true
+  hold: false
   topic_tag: 영덕고
   text: '영덕고는 문제집 여러 권 푼 아이가 오히려 위험해요.
 
@@ -147,7 +147,7 @@
 - id: th-04
   channel: threads
   at: 2026-11-30 21:30
-  hold: true
+  hold: false
   topic_tag: 태장고
   text: '태장고 학부모님, 고1 시험지에 고3 수능형 자료가 나오는 거 알고 계셨어요?
 
@@ -183,7 +183,7 @@
 - id: th-m01
   channel: threads
   at: 2026-12-01 10:30
-  hold: true
+  hold: false
   slot: 정보
   topic_tag: 통합과학
   text: '같은 통합과학인데, 학교 따라 공부법이 완전히 달라야 해요.
@@ -207,7 +207,7 @@
 - id: th-m01-link
   channel: threads
   at: 2026-12-01 10:40
-  hold: true
+  hold: false
   slot: 정보
   reply_to: th-m01
   text: '네 학교가 어디서 점수가 갈렸는지, 학교별로 정리한 글이에요.
@@ -217,7 +217,7 @@
 - id: ig-1p-01
   channel: instagram
   at: 2026-12-01 20:00
-  hold: true
+  hold: false
   slot: 정보
   text: '고1 시험지에
 
@@ -255,7 +255,7 @@
 - id: th-05
   channel: threads
   at: 2026-12-01 21:30
-  hold: true
+  hold: false
   topic_tag: 청명고
   text: '청명고 2학기 중간, 점수는 화학 이온 수 세는 문제에서 갈렸어요.
 
@@ -293,7 +293,7 @@
 - id: th-m02
   channel: threads
   at: 2026-12-02 10:30
-  hold: true
+  hold: false
   slot: 정보
   topic_tag: 통합과학
   text: '그래프 문제, 아이가 축 이름부터 읽나요?
@@ -316,7 +316,7 @@
 - id: th-m02-link
   channel: threads
   at: 2026-12-02 10:40
-  hold: true
+  hold: false
   slot: 정보
   reply_to: th-m02
   text: '학교별로 어떤 그래프와 자료가 나왔는지는 여기 정리해 두었어요.
@@ -326,7 +326,7 @@
 - id: ig-C-physics
   channel: instagram
   at: 2026-12-02 19:30
-  hold: true
+  hold: false
   slot: 모집
   text: "고2 물리, 겨울에 갈립니다.\n학부모님께 드리는 개강 전 안내\n\U0001F449 넘겨서 확인\n\n✔ 서울대 물리교육과 수석 입학\n✔ 영덕고 24/24 · 병점고 29/29 적중\n  (2026 2학기 중간 · 고1 수강생 기준)\n✔ 교재 4종 + 주 4회 카톡 관리\n✔ 금요일 클리닉\n\n\U0001F4C5 1월 2일(토) 개강\n· 토 오후 고2 연합 물리학 (영통)\n  (학기 중 토 오전 · 오후)\n· 일 오후 고2 병점 물리학 (영통)\n· 화 저녁 고2 병점 물리학 (동탄)\n\n\U0001F4DE 영통 이강학원 고등관\n   031-204-1353\n\U0001F4DE 동탄 모두의 선생님\n   031-548-0938\n\U0001F4AC DM @junu_physics\n\n#영통물리 #동탄물리 #예비고2물리 #고2물리학 #황준우과학"
   images:
@@ -342,7 +342,7 @@
 - id: th-06
   channel: threads
   at: 2026-12-02 21:30
-  hold: true
+  hold: false
   topic_tag: 고2물리
   text: '서울대 물리교육과 수석 입학.
 
@@ -366,7 +366,7 @@
 - id: th-m03
   channel: threads
   at: 2026-12-03 10:30
-  hold: true
+  hold: false
   slot: 정보
   topic_tag: 고2물리
   text: '고2 물리, 겨울방학 9번 수업으로 어디까지 갈 수 있을까요?
@@ -388,7 +388,7 @@
 - id: th-07
   channel: threads
   at: 2026-12-03 21:30
-  hold: true
+  hold: false
   slot: 정보
   topic_tag: 고2물리
   text: '제가 제일 자랑하고 싶은 숫자는 적중률이 아니에요.
@@ -411,7 +411,7 @@
 - id: th-m04
   channel: threads
   at: 2026-12-04 10:30
-  hold: true
+  hold: false
   slot: 정보
   topic_tag: 병점고
   text: '병점고는 쉬워도 무섭고, 어려워도 무서운 학교예요.
@@ -433,7 +433,7 @@
 - id: th-m04-link
   channel: threads
   at: 2026-12-04 10:40
-  hold: true
+  hold: false
   slot: 정보
   reply_to: th-m04
   text: '병점고 시험이 어디서 갈렸는지 더 자세히 정리한 글이에요.
@@ -443,7 +443,7 @@
 - id: ig-04
   channel: instagram
   at: 2026-12-04 19:30
-  hold: true
+  hold: false
   slot: 정보
   text: '교과서는 다 봤는데 93점?
 
@@ -497,7 +497,7 @@
 - id: th-08
   channel: threads
   at: 2026-12-04 21:30
-  hold: true
+  hold: false
   slot: 정보
   topic_tag: 통합과학
   text: 'ㄱ, ㄴ까지 맞혀 놓고 ㄷ에서 틀리는 아이가 제일 아까워요.
@@ -522,7 +522,7 @@
 - id: th-m05
   channel: threads
   at: 2026-12-05 10:30
-  hold: true
+  hold: false
   slot: 정보
   topic_tag: 통합과학
   text: '시험 전 마지막 주말, 새 문제집은 펴지 마세요.
@@ -545,7 +545,7 @@
 - id: ig-1p-02
   channel: instagram
   at: 2026-12-05 20:00
-  hold: true
+  hold: false
   slot: 정보
   text: '청명고 최고 배점 3문항,
 
@@ -583,7 +583,7 @@
 - id: th-09
   channel: threads
   at: 2026-12-05 21:30
-  hold: true
+  hold: false
   slot: 정보
   topic_tag: 통합과학
   text: '"기말 끝나면 일주일은 좀 쉬게 해도 되죠?"
@@ -610,7 +610,7 @@
 - id: th-m06
   channel: threads
   at: 2026-12-06 10:30
-  hold: true
+  hold: false
   slot: 정보
   topic_tag: 영덕고
   text: '영덕고는 문제집을 많이 푼 순서대로 점수가 나오지 않아요.
@@ -635,7 +635,7 @@
 - id: th-m06-link
   channel: threads
   at: 2026-12-06 10:40
-  hold: true
+  hold: false
   slot: 정보
   reply_to: th-m06
   text: '영덕고 시험에서 프린트와 필기가 어떻게 나왔는지 정리해 두었어요.
@@ -645,7 +645,7 @@
 - id: th-10
   channel: threads
   at: 2026-12-06 21:30
-  hold: true
+  hold: false
   slot: 정보
   topic_tag: 통합과학
   text: '우리 아이 학교 통합과학은 어떤 시험일까요?
@@ -675,7 +675,7 @@
 - id: th-10-link
   channel: threads
   at: 2026-12-06 21:40
-  hold: true
+  hold: false
   slot: 정보
   reply_to: th-10
   text: '네 학교 시험을 학교별로 하나씩 풀어 둔 글이에요.
