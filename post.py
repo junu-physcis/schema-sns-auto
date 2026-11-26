@@ -10,6 +10,7 @@ queue.yaml 에 적힌 게시물 중 게시 시각(KST)이 된 것을 Threads / I
   ONLY_ID=<id>             : 그 게시물 하나만 (시각 무시) 처리. 테스트용
 """
 import json
+import re
 import os
 import sys
 import time
@@ -160,6 +161,55 @@ def post_instagram(item, token):
 
 
 # ---------------- main ----------------
+
+# ---------------- 블로그 링크 자리표시 ----------------
+BLOG_RSS = "https://rss.blog.naver.com/physics_edu-16.xml"
+
+
+def blog_links():
+    """blog.yaml 의 id -> 제목 으로 네이버 RSS 에서 발행된 글 주소를 찾는다. 수동 주소(link)가 있으면 그걸 쓴다."""
+    try:
+        conf = yaml.safe_load(open("blog.yaml", encoding="utf-8")) or {}
+    except FileNotFoundError:
+        return {}
+    links = {k: v.get("link") for k, v in conf.items() if v.get("link")}
+    try:
+        import xml.etree.ElementTree as ET
+        root = ET.fromstring(requests.get(BLOG_RSS, timeout=30).content)
+        items = [(i.findtext("title") or "", i.findtext("link") or "") for i in root.iter("item")]
+        norm = lambda t: re.sub(r"\s+", "", t)
+        for k, v in conf.items():
+            if k in links:
+                continue
+            for t, l in items:
+                if norm(t) == norm(v.get("title", "")):
+                    links[k] = l.split("?")[0]
+    except Exception as e:
+        print(f"[블로그 RSS 확인 실패] {e}")
+    return links
+
+
+def fill_blog(item):
+    """{{bl-01}} 자리표시를 실제 주소로 바꾼다. 주소가 없으면 그 답글은 빼고, 본글에 있으면 게시를 미룬다."""
+    if "{{" not in json.dumps(item, ensure_ascii=False):
+        return item
+    links = blog_links()
+    sub = lambda t: re.sub(r"\{\{(bl-\d+)\}\}", lambda m: links.get(m.group(1), m.group(0)), t)
+    item = dict(item)
+    item["text"] = sub(item.get("text", ""))
+    if "{{" in item["text"]:
+        raise RuntimeError("본글의 블로그 주소가 아직 없음 (블로그 발행 전)")
+    reps = []
+    for r in item.get("replies", []):
+        t = sub(r.get("text", ""))
+        if "{{" in t:
+            print(f"[{item['id']}] 블로그 주소 없는 답글 1개 제외")
+            continue
+        reps.append({**r, "text": t})
+    item["replies"] = reps
+    return item
+
+
 def main():
     queue = yaml.safe_load(open("queue.yaml", encoding="utf-8")) or []
     try:
@@ -195,7 +245,7 @@ def main():
         ids = []
         try:
             if ch == "threads":
-                post_threads(item, os.environ["THREADS_TOKEN"], ids)
+                post_threads(fill_blog(item), os.environ["THREADS_TOKEN"], ids)
             elif ch == "instagram":
                 ids = post_instagram(item, os.environ["IG_TOKEN"])
             else:
