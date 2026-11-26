@@ -1,0 +1,21 @@
+name: 인스타 게시물 내려받기
+on:
+  workflow_dispatch:
+concurrency:
+  group: post
+  cancel-in-progress: false
+permissions:
+  contents: write
+jobs:
+  f:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: pip install -q requests && python fetch_media.py
+        env:
+          IG_TOKEN: ${{ secrets.IG_TOKEN }}
+      - run: |
+          git config user.name "schema-bot"
+          git config user.email "schema-bot@users.noreply.github.com"
+          git add fetched
+          git diff --cached --quiet || (git commit -m "인스타 게시물 내려받기" && git pull --rebase -q && git push -q)
