@@ -45,7 +45,10 @@ def insights(url, names, tok):
         return metrics(d)
     out = {}
     for n in names:
-        out.update(metrics(get(url, metric=n, access_token=tok)))
+        r = get(url, metric=n, access_token=tok)
+        if "error" in r:
+            out.setdefault("_오류", (r["error"] or {}).get("message", str(r["error"]))[:120] if isinstance(r["error"], dict) else str(r["error"])[:120])
+        out.update(metrics(r))
     return out
 
 
@@ -100,7 +103,10 @@ def main():
         lines.append(f"| {r['채널']} | {r['예약ID']} | {r['게시']} | {r['첫줄'].replace('|', '/')} | "
                      + " | ".join("" if r.get(c) is None else str(r.get(c)) for c in cols) + " |")
     lines += ["", "빈칸 = 그 채널·형식에서 지원 안 하는 항목. shares = 보내기(공유), saved = 저장, follows = 그 게시물로 생긴 팔로우.",
-              "스레드는 답글도 각각 한 줄로 나온다(예약ID 뒤 '(답글)')."]
+              "스레드 표는 본글 기준. 수집 오류가 있으면 아래에 적는다."]
+    errs = sorted({r["_오류"] for r in rep["posts"] if r.get("_오류")})
+    lines += [f"- 오류: {e}" for e in errs] or []
+    lines += [""]
     open("성과/latest.md", "w", encoding="utf-8").write("\n".join(lines) + "\n")
     print("\n".join(lines))
 
