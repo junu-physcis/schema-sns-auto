@@ -152,20 +152,23 @@ def post_instagram(item, token):
         return [call("POST", f"{ig_me(token)}/media_publish", creation_id=cid, access_token=token)["id"]]
     if not images:
         raise RuntimeError("인스타 게시물에는 이미지가 1장 이상 필요")
+    alts = item.get("alt_texts") or []  # 이미지별 대체 텍스트 (선택)
+    alt = lambda n: {"alt_text": alts[n]} if n < len(alts) and alts[n] else {}
+    loc = {"location_id": str(item["location_id"])} if item.get("location_id") else {}  # 위치 태그 (페북 장소 페이지 ID)
     if len(caption) > 2200:
         raise RuntimeError("인스타 캡션이 2200자를 넘음")
     if len(images) == 1:
         cid = call("POST", f"{ig_me(token)}/media", image_url=media_url(images[0]),
-                   caption=caption, access_token=token)["id"]
+                   caption=caption, access_token=token, **alt(0), **loc)["id"]
     else:
         kids = []
-        for p in images[:10]:
+        for n, p in enumerate(images[:10]):
             kids.append(call("POST", f"{ig_me(token)}/media", image_url=media_url(p),
-                             is_carousel_item="true", access_token=token)["id"])
+                             is_carousel_item="true", access_token=token, **alt(n))["id"])
         for k in kids:
             ig_wait(k, token)
         cid = call("POST", f"{ig_me(token)}/media", media_type="CAROUSEL", children=",".join(kids),
-                   caption=caption, access_token=token)["id"]
+                   caption=caption, access_token=token, **loc)["id"]
     ig_wait(cid, token)
     return [call("POST", f"{ig_me(token)}/media_publish", creation_id=cid, access_token=token)["id"]]
 
