@@ -41,7 +41,7 @@ if th:
         print(f"[Threads] 연장 완료, {int(d.get('expires_in', 0)) // 86400}일 유효")
 
 ig = os.environ.get("IG_TOKEN")
-if ig:
+if ig and ig.startswith("IG"):  # EAA(시스템 사용자) 토큰은 만료가 없어 연장 불필요
     try:
         d = get("https://graph.instagram.com/refresh_access_token", grant_type="ig_refresh_token", access_token=ig)
         save("IG_TOKEN", d["access_token"])
