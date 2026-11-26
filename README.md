@@ -1,0 +1,1 @@
+# schema-sns-auto
