@@ -423,6 +423,8 @@
 
 
     상담은 DM으로 편하게 주세요.'
+  images:
+  - media/threads2/th-m01.jpg
 - id: th-m01-link
   channel: threads
   at: 2026-12-01 10:40
@@ -550,6 +552,8 @@
 
 
     우리 아이 학교 상담은 영통 이강학원 고등관 031-204-1353으로 주세요.'
+  images:
+  - media/threads2/th-m02.jpg
 - id: th-m02-link
   channel: threads
   at: 2026-12-02 10:40
@@ -638,6 +642,8 @@
 
 
     궁금한 건 DM 주시면 제가 직접 답드려요.'
+  images:
+  - media/threads2/th-m03.jpg
 - id: th-07
   channel: threads
   at: 2026-12-03 21:30
@@ -667,6 +673,8 @@
 
 
     DM 주시면 아이 학교에 맞춰 안내해 드릴게요.'
+  images:
+  - media/threads2/th-07.jpg
 - id: th-m04
   channel: threads
   at: 2026-12-04 10:30
@@ -695,6 +703,8 @@
 
 
     동탄 상담은 모두의 선생님 031-548-0938로 주세요.'
+  images:
+  - media/threads2/th-m04.jpg
 - id: th-m04-link
   channel: threads
   at: 2026-12-04 10:40
@@ -810,6 +820,8 @@
 
 
     동탄반 문의는 031-548-0938이에요.'
+  images:
+  - media/threads2/th-08.jpg
 - id: th-m05
   channel: threads
   at: 2026-12-05 10:30
@@ -839,6 +851,8 @@
 
 
     학교별 반 상담은 DM으로 받고 있어요.'
+  images:
+  - media/threads2/th-m05.jpg
 - id: ig-1p-02
   channel: instagram
   at: 2026-12-05 20:00
@@ -922,6 +936,8 @@
 
 
     상담 원하시면 DM 한 줄이면 돼요.'
+  images:
+  - media/threads2/th-09.jpg
 - id: th-m06
   channel: threads
   at: 2026-12-06 10:30
@@ -953,6 +969,8 @@
 
 
     상담 전화는 영통 031-204-1353이에요.'
+  images:
+  - media/threads2/th-m06.jpg
 - id: th-m06-link
   channel: threads
   at: 2026-12-06 10:40
@@ -984,6 +1002,8 @@
       영덕고는 서술형 20점이 승부처고요.
 
       ※ 2026 2학기 중간고사 기준'
+    images:
+    - media/threads2/th-10_reply1.jpg
   - text: '청명고는 화학 계산 세 문제가 배점 1~3위였어요.
 
       태장고는 고2 · 고3 선택과목에서 쓰는 수능형 자료가 나와요.
@@ -1037,6 +1057,8 @@
 
 
     아이 시험지 들고 상담 오셔도 좋아요. DM 주세요.'
+  images:
+  - media/threads2/th-m07.jpg
 - id: th-m07-link
   channel: threads
   at: 2026-12-07 10:40
@@ -1147,6 +1169,8 @@
 
 
     상담은 DM으로 편하게 주세요.'
+  images:
+  - media/threads2/th-11.jpg
 - id: th-m08
   channel: threads
   at: 2026-12-08 10:30
@@ -1176,6 +1200,8 @@
 
 
     겨울방학 반 문의는 031-204-1353으로 주세요.'
+  images:
+  - media/threads2/th-m08.jpg
 - id: ig-1p-03
   channel: instagram
   at: 2026-12-08 20:00
@@ -1262,6 +1288,8 @@
 
 
     우리 아이 학교 상담은 영통 이강학원 고등관 031-204-1353으로 주세요.'
+  images:
+  - media/threads2/th-12.jpg
 - id: th-m09
   channel: threads
   at: 2026-12-09 10:30
@@ -1292,6 +1320,8 @@
 
 
     DM 주시면 아이 학교에 맞춰 안내해 드릴게요.'
+  images:
+  - media/threads2/th-m09.jpg
 - id: th-m09-link
   channel: threads
   at: 2026-12-09 10:40
@@ -1399,6 +1429,8 @@
 
 
     궁금한 건 DM 주시면 제가 직접 답드려요.'
+  images:
+  - media/threads2/th-13.jpg
 - id: th-m10
   channel: threads
   at: 2026-12-10 10:30
@@ -1429,6 +1461,8 @@
 
 
     동탄반 문의는 031-548-0938이에요.'
+  images:
+  - media/threads2/th-m10.jpg
 - id: th-14
   channel: threads
   at: 2026-12-10 21:30
@@ -1447,6 +1481,8 @@
       개념 정리 → 기본 예제 → 풀이 알고리즘 순서예요.
 
       실전 문제는 LOGIC 빈칸을 채우며 풀이 순서를 손으로 익혀요.'
+    images:
+    - media/threads2/th-14_reply1.jpg
   - text: '📌 2단계 · 리스키마 체화서
 
       실전 문제로 1단계 알고리즘을 다시 세우는 책이에요.
@@ -1500,6 +1536,8 @@
 
 
     상담 원하시면 DM 한 줄이면 돼요.'
+  images:
+  - media/threads2/th-m11.jpg
 - id: ig-11
   channel: instagram
   at: 2026-12-11 19:30
@@ -1601,6 +1639,8 @@
 
 
     학교별 반 상담은 DM으로 받고 있어요.'
+  images:
+  - media/threads2/th-15.jpg
 - id: th-m12
   channel: threads
   at: 2026-12-12 10:30
@@ -1629,6 +1669,8 @@
 
 
     반 배정 상담은 영통 031-204-1353으로 주세요.'
+  images:
+  - media/threads2/th-m12.jpg
 - id: ig-1p-04
   channel: instagram
   at: 2026-12-12 20:00
@@ -1708,6 +1750,8 @@
 
 
     상담 전화는 영통 031-204-1353이에요.'
+  images:
+  - media/threads2/th-16.jpg
 - id: th-m13
   channel: threads
   at: 2026-12-13 10:30
@@ -1739,6 +1783,8 @@
 
 
     예비고2 물리 상담은 DM이나 031-204-1353으로 주세요.'
+  images:
+  - media/threads2/th-m13.jpg
 - id: th-17
   channel: threads
   at: 2026-12-13 21:30
@@ -1765,3 +1811,5 @@
     상담은 영통 031-204-1353, 동탄 031-548-0938로 주세요.'
   replies:
   - text: 연합반은 학기 중에는 토요일 오전 · 오후로 바뀌어요.
+  images:
+  - media/threads2/th-17.jpg
