@@ -1,7 +1,9 @@
 name: 성과 수집
 on:
   schedule:
-    - cron: "20 23 * * *"   # 매일 08:20 KST (총괄 08:47 점검 전)
+    - cron: "20 23 * * *"   # 08:20 KST (총괄 08:47 점검 전)
+    - cron: "40 8 * * *"    # 17:40 KST (18:13 저녁 회의 전)
+    - cron: "0 14 * * *"    # 23:00 KST (하루 마감, 밤 1회 고정 수집)
   workflow_dispatch:
 concurrency:
   group: post
