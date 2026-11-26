@@ -909,3 +909,12 @@
 
       blog.naver.com/physics_edu-16'
   - text: 연합반은 학기 중에는 토요일 오전 · 오후로 바뀌어요.
+- id: th-01-blog
+  channel: threads
+  at: 2026-11-27 06:00
+  hold: true
+  slot: 정보
+  reply_to: th-01
+  text: |-
+    네 학교 시험지 비교, 블로그에 더 자세히 정리해 두었어요.
+    {{bl-01}}

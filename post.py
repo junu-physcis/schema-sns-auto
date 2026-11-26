@@ -103,13 +103,13 @@ def th_publish(token, cid):
 
 def post_threads(item, token, ids):
     parts = [{"text": item.get("text", ""), "images": item.get("images", [])}] + item.get("replies", [])
-    parent = None
+    parent = item.get("reply_to_id")  # 이미 올라간 글에 답글로 붙일 때
     for i, part in enumerate(parts):
         text = part.get("text", "")
         if len(text) > 500:
             raise RuntimeError(f"{item['id']} 의 {i}번째 글이 500자를 넘음 ({len(text)}자)")
         cid = th_container(token, text, part.get("images", []), reply_to=parent,
-                           topic_tag=item.get("topic_tag") if i == 0 else None)
+                           topic_tag=item.get("topic_tag") if i == 0 and not parent else None)
         pid = th_publish(token, cid)
         ids.append(pid)
         parent = pid  # 답글은 바로 앞 글에 이어 단다 (타래)
@@ -245,7 +245,13 @@ def main():
         ids = []
         try:
             if ch == "threads":
-                post_threads(fill_blog(item), os.environ["THREADS_TOKEN"], ids)
+                it = fill_blog(item)
+                if it.get("reply_to"):  # reply_to: th-01 → th-01 타래의 마지막 글에 붙인다
+                    ref = state.get(it["reply_to"], {})
+                    if not ref.get("ids"):
+                        raise RuntimeError(f"{it['reply_to']} 가 아직 안 올라가서 답글을 달 수 없음")
+                    it["reply_to_id"] = ref["ids"][-1]
+                post_threads(it, os.environ["THREADS_TOKEN"], ids)
             elif ch == "instagram":
                 ids = post_instagram(item, os.environ["IG_TOKEN"])
             else:
