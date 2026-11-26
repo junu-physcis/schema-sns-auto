@@ -1,0 +1,43 @@
+name: 예약 게시
+on:
+  schedule:
+    - cron: "*/10 * * * *"
+  workflow_dispatch:
+    inputs:
+      only_id:
+        description: "이 id 하나만 지금 올리기 (테스트용, 비우면 예약표대로)"
+        required: false
+      dry_run:
+        description: "1 이면 실제로 올리지 않고 확인만"
+        required: false
+        default: "0"
+concurrency:
+  group: post
+  cancel-in-progress: false
+permissions:
+  contents: write
+jobs:
+  post:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install -q requests pyyaml
+      - name: 게시
+        env:
+          THREADS_TOKEN: ${{ secrets.THREADS_TOKEN }}
+          IG_TOKEN: ${{ secrets.IG_TOKEN }}
+          REPO: ${{ github.repository }}
+          BRANCH: ${{ github.ref_name }}
+          ONLY_ID: ${{ github.event.inputs.only_id }}
+          DRY_RUN: ${{ github.event.inputs.dry_run }}
+        run: python post.py
+      - name: 기록 저장
+        if: always()
+        run: |
+          git config user.name "schema-bot"
+          git config user.email "schema-bot@users.noreply.github.com"
+          git add state.json
+          git diff --cached --quiet || (git commit -m "게시 기록 갱신" && git pull --rebase -q && git push -q)
