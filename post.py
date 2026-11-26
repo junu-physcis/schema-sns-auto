@@ -67,7 +67,9 @@ def th_container(token, text, images, reply_to=None, topic_tag=None):
     if topic_tag:
         base["topic_tag"] = topic_tag
     if not images:
-        return call("POST", f"{TH}/me/threads", media_type="TEXT", text=text, **base)["id"]
+        cid = call("POST", f"{TH}/me/threads", media_type="TEXT", text=text, **base)["id"]
+        th_wait(cid, token)
+        return cid
     if len(images) == 1:
         cid = call("POST", f"{TH}/me/threads", media_type="IMAGE",
                    image_url=media_url(images[0]), text=text, **base)["id"]
@@ -87,7 +89,15 @@ def th_container(token, text, images, reply_to=None, topic_tag=None):
 
 
 def th_publish(token, cid):
-    return call("POST", f"{TH}/me/threads_publish", creation_id=cid, access_token=token)["id"]
+    # 컨테이너가 FINISHED 여도 바로 publish 하면 'Media Not Found'(code 24)가 날 수 있어 잠깐 쉬고 재시도한다
+    time.sleep(10)
+    for n in range(5):
+        try:
+            return call("POST", f"{TH}/me/threads_publish", creation_id=cid, access_token=token)["id"]
+        except RuntimeError as e:
+            if "'code': 24" not in str(e) or n == 4:
+                raise
+            time.sleep(15)
 
 
 def post_threads(item, token, ids):
