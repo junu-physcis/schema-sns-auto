@@ -1,0 +1,28 @@
+{
+ "collected_at": "2026-11-27T05:40:36.301563+09:00",
+ "account": {
+  "threads": {
+   "followers_count": 0,
+   "views": 0,
+   "likes": 0,
+   "replies": 0,
+   "reposts": 0,
+   "quotes": 0
+  }
+ },
+ "posts": {
+  "th-01": {
+   "channel": "threads",
+   "slot": null,
+   "at": "2026-11-27 21:30",
+   "posted_at": "2026-11-27T05:39:05.925071+09:00",
+   "views": 0,
+   "likes": 0,
+   "replies": 2,
+   "reposts": 0,
+   "quotes": 0,
+   "shares": 0,
+   "외부답글": 0
+  }
+ }
+}
