@@ -25,6 +25,16 @@ KST = ZoneInfo("Asia/Seoul")
 GRACE = timedelta(hours=3)  # 이보다 늦게 발견한 게시물은 올리지 않고 'missed' 로 남긴다
 TH = "https://graph.threads.net/v1.0"
 IG = "https://graph.instagram.com/v22.0"
+IG_USER_ID = "17841445606722579"  # @junu_physics (공개 숫자 ID)
+
+
+def ig_host(token):
+    """IGAA… 토큰은 graph.instagram.com, EAA… 토큰(페북 로그인/시스템 사용자)은 graph.facebook.com 을 쓴다."""
+    return "https://graph.instagram.com/v22.0" if token.startswith("IG") else "https://graph.facebook.com/v22.0"
+
+
+def ig_me(token):
+    return ig_host(token) + ("/me" if token.startswith("IG") else f"/{IG_USER_ID}")
 
 DRY = os.environ.get("DRY_RUN") == "1"
 ONLY = os.environ.get("ONLY_ID", "").strip()
@@ -120,7 +130,7 @@ def post_threads(item, token, ids):
 # ---------------- Instagram ----------------
 def ig_wait(cid, token):
     for _ in range(40):
-        s = call("GET", f"{IG}/{cid}", fields="status_code,status", access_token=token)
+        s = call("GET", f"{ig_host(token)}/{cid}", fields="status_code,status", access_token=token)
         if s.get("status_code") == "FINISHED":
             return
         if s.get("status_code") in ("ERROR", "EXPIRED"):
@@ -137,27 +147,27 @@ def post_instagram(item, token):
                   "share_to_feed": "true", "access_token": token}
         if item.get("cover"):
             params["cover_url"] = media_url(item["cover"])
-        cid = call("POST", f"{IG}/me/media", **params)["id"]
+        cid = call("POST", f"{ig_me(token)}/media", **params)["id"]
         ig_wait(cid, token)
-        return [call("POST", f"{IG}/me/media_publish", creation_id=cid, access_token=token)["id"]]
+        return [call("POST", f"{ig_me(token)}/media_publish", creation_id=cid, access_token=token)["id"]]
     if not images:
         raise RuntimeError("인스타 게시물에는 이미지가 1장 이상 필요")
     if len(caption) > 2200:
         raise RuntimeError("인스타 캡션이 2200자를 넘음")
     if len(images) == 1:
-        cid = call("POST", f"{IG}/me/media", image_url=media_url(images[0]),
+        cid = call("POST", f"{ig_me(token)}/media", image_url=media_url(images[0]),
                    caption=caption, access_token=token)["id"]
     else:
         kids = []
         for p in images[:10]:
-            kids.append(call("POST", f"{IG}/me/media", image_url=media_url(p),
+            kids.append(call("POST", f"{ig_me(token)}/media", image_url=media_url(p),
                              is_carousel_item="true", access_token=token)["id"])
         for k in kids:
             ig_wait(k, token)
-        cid = call("POST", f"{IG}/me/media", media_type="CAROUSEL", children=",".join(kids),
+        cid = call("POST", f"{ig_me(token)}/media", media_type="CAROUSEL", children=",".join(kids),
                    caption=caption, access_token=token)["id"]
     ig_wait(cid, token)
-    return [call("POST", f"{IG}/me/media_publish", creation_id=cid, access_token=token)["id"]]
+    return [call("POST", f"{ig_me(token)}/media_publish", creation_id=cid, access_token=token)["id"]]
 
 
 # ---------------- main ----------------

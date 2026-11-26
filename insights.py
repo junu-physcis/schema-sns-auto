@@ -13,6 +13,16 @@ import yaml
 KST = timezone(timedelta(hours=9))
 TH = "https://graph.threads.net/v1.0"
 IG = "https://graph.instagram.com/v22.0"
+IG_USER_ID = "17841445606722579"  # @junu_physics (공개 숫자 ID)
+
+
+def ig_host(token):
+    """IGAA… 토큰은 graph.instagram.com, EAA… 토큰(페북 로그인/시스템 사용자)은 graph.facebook.com 을 쓴다."""
+    return "https://graph.instagram.com/v22.0" if token.startswith("IG") else "https://graph.facebook.com/v22.0"
+
+
+def ig_me(token):
+    return ig_host(token) + ("/me" if token.startswith("IG") else f"/{IG_USER_ID}")
 
 
 def get(url, **p):
@@ -43,7 +53,7 @@ def main():
                         access_token=th))
         rep["account"]["threads"] = u
     if ig:
-        me = get(f"{IG}/me", fields="followers_count,media_count", access_token=ig)
+        me = get(ig_me(ig), fields="followers_count,media_count", access_token=ig)
         rep["account"]["instagram"] = {k: me.get(k) for k in ("followers_count", "media_count")}
 
     for iid, st in state.items():
@@ -61,7 +71,7 @@ def main():
             others = [c for c in conv.get("data", []) or [] if c.get("username") != "junu_physics"]
             row["외부답글"] = len(others)
         elif ch == "instagram" and ig:
-            row.update(metrics(get(f"{IG}/{first}/insights",
+            row.update(metrics(get(f"{ig_host(ig)}/{first}/insights",
                                    metric="reach,views,likes,comments,shares,saved,follows,total_interactions",
                                    access_token=ig)))
         rep["posts"][iid] = row
