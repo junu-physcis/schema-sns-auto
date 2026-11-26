@@ -1,0 +1,30 @@
+name: 성과 수집
+on:
+  schedule:
+    - cron: "20 23 * * *"   # 매일 08:20 KST (총괄 08:47 점검 전)
+  workflow_dispatch:
+concurrency:
+  group: post
+  cancel-in-progress: false
+permissions:
+  contents: write
+jobs:
+  insights:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install -q requests pyyaml
+      - name: 수집
+        env:
+          THREADS_TOKEN: ${{ secrets.THREADS_TOKEN }}
+          IG_TOKEN: ${{ secrets.IG_TOKEN }}
+        run: python insights.py
+      - name: 저장
+        run: |
+          git config user.name "schema-bot"
+          git config user.email "schema-bot@users.noreply.github.com"
+          git add 성과
+          git diff --cached --quiet || (git commit -m "성과 수집" && git pull --rebase -q && git push -q)
