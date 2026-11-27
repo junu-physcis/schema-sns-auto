@@ -67,8 +67,8 @@
  "th-02-link": {
   "status": "error",
   "ids": [],
-  "error": "POST https://graph.threads.net/v1.0/me/threads -> 400: {'message': 'API access blocked.', 'code': 200, 'type': 'OAuthException', 'error_subcode': 5258005, 'fbtrace_id': 'AHTLjTRDVJ1ahdDNXSW31T8'}",
-  "tries": 1,
-  "last_try": "2026-11-27T21:42:18.703210+09:00"
+  "error": "POST https://graph.threads.net/v1.0/me/threads -> 400: {'message': 'API access blocked.', 'code': 200, 'type': 'OAuthException', 'error_subcode': 5258005, 'fbtrace_id': 'AhbKN37IY1uIaU6j4XtIBmW'}",
+  "tries": 2,
+  "last_try": "2026-11-27T22:59:00.964054+09:00"
  }
 }
