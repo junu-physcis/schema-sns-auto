@@ -1218,7 +1218,7 @@
 - id: th-11
   channel: threads
   at: 2026-12-07 21:30
-  hold: true
+  hold: false
   slot: 증거
   topic_tag: 통합과학
   text: '병점고 수강생 88%가 2등급 안에 들었어요.
