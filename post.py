@@ -36,7 +36,7 @@ def ig_host(token):
 def ig_me(token):
     return ig_host(token) + ("/me" if token.startswith("IG") else f"/{IG_USER_ID}")
 
-DRY = os.environ.get("DRY_RUN") == "1"
+DRY = (os.environ.get("DRY_RUN") or "").strip().lower() in ("1", "true", "yes", "y")
 ONLY = os.environ.get("ONLY_ID", "").strip()
 REPO = os.environ.get("REPO", "")
 BRANCH = os.environ.get("BRANCH", "main")
