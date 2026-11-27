@@ -36,7 +36,8 @@ def ig_host(token):
 def ig_me(token):
     return ig_host(token) + ("/me" if token.startswith("IG") else f"/{IG_USER_ID}")
 
-DRY = (os.environ.get("DRY_RUN") or "").strip().lower() in ("1", "true", "yes", "y")
+_dry = (os.environ.get("DRY_RUN") or "").strip().lower()
+DRY = _dry not in ("", "0", "false", "no", "n")  # 안전장치: 0/false/no/빈값이 아니면 전부 확인 모드 (오타도 실게시 안 됨)
 ONLY = os.environ.get("ONLY_ID", "").strip()
 REPO = os.environ.get("REPO", "")
 BRANCH = os.environ.get("BRANCH", "main")
