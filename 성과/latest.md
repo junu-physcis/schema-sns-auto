@@ -1,4 +1,4 @@
-# 성과 (2026-11-27 22:41 KST 수집)
+# 성과 (2026-11-27 23:45 KST 수집)
 
 - threads 계정: _오류 API access blocked.
 - instagram 계정: followers_count None, media_count None
