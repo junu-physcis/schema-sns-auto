@@ -764,7 +764,7 @@
   - media/threads2/th-m03.jpg
 - id: th-07
   channel: threads
-  at: 2026-12-03 21:30
+  at: 2026-12-07 21:30
   hold: false
   slot: 정보
   topic_tag: 통합과학
@@ -909,7 +909,7 @@
   - 같은 학교 학부모님께 보내 주세요, 영통·동탄 고1 통합과학 상담 전화와 DM 안내
 - id: th-08
   channel: threads
-  at: 2026-12-04 21:30
+  at: 2026-12-04 10:30
   hold: false
   slot: 정보
   topic_tag: 통합과학
@@ -979,7 +979,7 @@
   - media/threads2/th-09.jpg
 - id: th-m06
   channel: threads
-  at: 2026-12-06 10:30
+  at: 2026-12-05 10:30
   hold: false
   slot: 정보
   topic_tag: 영덕고
@@ -1012,7 +1012,7 @@
   - media/threads2/th-m06.jpg
 - id: th-m06-link
   channel: threads
-  at: 2026-12-06 10:40
+  at: 2026-12-05 10:40
   hold: false
   slot: 정보
   reply_to: th-m06
@@ -1217,7 +1217,7 @@
   - 같은 학교 학부모님께 보내 주세요, 다음 편 영덕고 예고, 영통·동탄 문의 전화, 블로그 안내
 - id: th-11
   channel: threads
-  at: 2026-12-07 21:30
+  at: 2026-12-08 10:30
   hold: false
   slot: 증거
   topic_tag: 통합과학
@@ -1252,7 +1252,7 @@
   - media/threads2/th-11.jpg
 - id: th-m08
   channel: threads
-  at: 2026-12-08 10:30
+  at: 2026-12-09 10:30
   hold: false
   slot: 정보
   topic_tag: 통합과학
@@ -1333,7 +1333,7 @@
   - 같은 학교 학부모님께 보내 주세요, 고1 통합과학 기말 대비 DM 안내
 - id: th-12
   channel: threads
-  at: 2026-12-08 21:30
+  at: 2026-12-01 10:30
   hold: false
   slot: 정보
   topic_tag: 통합과학
@@ -1371,7 +1371,7 @@
   - media/threads2/th-12.jpg
 - id: th-m09
   channel: threads
-  at: 2026-12-09 10:30
+  at: 2026-12-06 10:30
   hold: false
   slot: 정보
   topic_tag: 태장고
@@ -1403,7 +1403,7 @@
   - media/threads2/th-m09.jpg
 - id: th-m09-link
   channel: threads
-  at: 2026-12-09 10:40
+  at: 2026-12-06 10:40
   hold: false
   slot: 정보
   reply_to: th-m09
@@ -1480,11 +1480,11 @@
   - 같은 학교 학부모님께 보내 주세요, 영통·동탄 문의 전화와 블로그 안내
 - id: th-13
   channel: threads
-  at: 2026-12-12 21:30
+  at: 2026-12-12 10:30
   hold: false
   slot: 정보
   topic_tag: 통합과학
-  text: '병점고 · 영덕고 학부모님, 시험 2주 전이면 저는 학생보다 학교 프린트를 먼저 끝까지 읽어요.
+  text: '고1 학부모님, 시험 2주 전이면 저는 학생보다 학교 프린트를 먼저 끝까지 읽어요.
 
 
     프린트 한 줄까지 끝까지 읽는 사람이 이긴다고 믿거든요.
@@ -1680,7 +1680,7 @@
   - media/threads2/th-15.jpg
 - id: th-m12
   channel: threads
-  at: 2026-12-12 10:30
+  at: 2026-12-10 10:30
   hold: false
   slot: 정보
   topic_tag: 통합과학
@@ -1708,7 +1708,6 @@
     반 배정 상담은 영통 031-204-1353으로 주세요.'
   images:
   - media/threads2/th-m12.jpg
-# th-16 참여형 교체본 (3차 회의) · 총괄 일정 당김 12/2
 - id: th-16
   channel: threads
   at: 2026-12-02 21:30
@@ -1920,7 +1919,7 @@
     아이는 배운 걸 말로 설명해 보라고 하면 술술 하는 편인가요?'
 - id: th-a01
   channel: threads
-  at: 2026-12-01 10:30
+  at: 2026-12-03 21:30
   hold: false
   slot: 정보
   topic_tag: 통합과학
@@ -1966,7 +1965,7 @@
   - media/threads2/th-a02.jpg
 - id: th-a03
   channel: threads
-  at: 2026-12-04 10:30
+  at: 2026-12-04 21:30
   hold: false
   slot: 정보
   topic_tag: 통합과학
@@ -1989,3 +1988,47 @@
 
 
     아이는 틀린 문제를 다시 풀어 보는 편인가요, 넘어가는 편인가요?'
+- id: th-mom02
+  channel: threads
+  at: 2026-12-08 21:30
+  hold: false
+  slot: 공감
+  topic_tag: 통합과학
+  text: '고1 어머님, 기말 앞두고 아이 방 불이 새벽까지 켜져 있으면 마음이 복잡하시죠.
+
+
+    열심히 하는 건 대견한데, 시험 직전엔 새 범위를 펴는 밤이 제일 위험해요.
+
+    처음 보는 내용은 하루 만에 시험장까지 가져가기 어렵거든요.
+
+
+    시험 사흘 전부터는 이렇게만 정해 주세요.
+
+    새 문제 말고, 이미 틀렸던 문제와 학교 프린트만 다시 보기.
+
+    그리고 잠은 줄이지 않기.
+
+
+    아이는 시험 전날 밤, 몇 시쯤 잠드는 편인가요?'
+- id: th-mom03
+  channel: threads
+  at: 2026-12-12 21:30
+  hold: false
+  slot: 공감
+  topic_tag: 통합과학
+  text: '병점 · 영덕 · 청명 · 태장 고1 어머님, 겨울방학 과학 학원 어디로 보낼지 벌써 고민되시죠.
+
+
+    설명회도 많고 광고도 많아서 더 헷갈리실 거예요.
+
+    그럴 땐 딱 하나만 물어보세요.
+
+    "우리 아이 학교 시험지, 직접 보셨어요?"
+
+
+    같은 통합과학이어도 학교마다 점수가 갈리는 곳이 달라서,
+
+    그 학교 시험지를 아는 수업인지가 겨울을 좌우해요.
+
+
+    아이는 이번 겨울에 뭘 제일 먼저 채우고 싶어 하나요?'
