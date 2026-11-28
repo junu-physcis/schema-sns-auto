@@ -65,10 +65,10 @@
   "posted_at": "2026-11-27T21:33:26.122148+09:00"
  },
  "th-02-link": {
-  "status": "error",
-  "ids": [],
-  "error": "POST https://graph.threads.net/v1.0/me/threads -> 400: {'message': 'API access blocked.', 'code': 200, 'type': 'OAuthException', 'error_subcode': 5258005, 'fbtrace_id': 'AntlzcvMJ_i0ZKEp4B1VYuk'}",
-  "tries": 3,
-  "last_try": "2026-11-27T23:54:31.166824+09:00"
+  "status": "posted",
+  "ids": [
+   "17962302867272693"
+  ],
+  "posted_at": "2026-11-28T09:13:57.227516+09:00"
  }
 }
